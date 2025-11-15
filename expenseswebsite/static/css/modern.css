@@ -1,0 +1,96 @@
+/* --- Modern CSS Enhancements --- */
+
+/* General body and text improvements */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background-color: #f8f9fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Improve link visuals */
+a {
+  color: #0056b3;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Buttons: more depth and clarity */
+.btn {
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Sidebar styling cleanup */
+.sidebar {
+  background: #ffffff;
+  border-right: 1px solid #e2e2e2;
+}
+.sidebar .nav-link {
+  border-radius: 4px;
+  margin: 4px 8px;
+  transition: background 0.2s ease;
+}
+.sidebar .nav-link:hover {
+  background: rgba(0, 123, 255, 0.08);
+}
+
+/* Active nav-link visibility */
+.sidebar .nav-link.active {
+  color: #0d6efd;
+  background: rgba(13, 110, 253, 0.1);
+  font-weight: 600;
+}
+
+/* Navbar improvements */
+.navbar {
+  background: linear-gradient(90deg, #0d6efd, #0048c0);
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables and cards */
+.table {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+.table th {
+  background-color: #f1f3f5;
+}
+
+/* Form controls */
+input,
+select,
+textarea {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+}
+
+/* Password toggle feedback */
+.showPasswordToggle {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.showPasswordToggle:hover {
+  transform: scale(1.25);
+  opacity: 0.8;
+}
+
+/* Smooth page transitions */
+html {
+  scroll-behavior: smooth;
+}

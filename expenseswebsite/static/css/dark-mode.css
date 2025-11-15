@@ -1,0 +1,90 @@
+/* ===== DARK MODE FIX ===== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+/* Cards, tables, content containers */
+body.dark-mode .card,
+body.dark-mode .table,
+body.dark-mode .content,
+body.dark-mode .main,
+body.dark-mode main,
+body.dark-mode .breadcrumb,
+body.dark-mode .form-control,
+body.dark-mode .alert,
+body.dark-mode .container,
+body.dark-mode .col-md-9,
+body.dark-mode .col-lg-10 {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+}
+
+/* Navbar and sidebar */
+body.dark-mode .navbar,
+body.dark-mode .sidebar {
+  background-color: #1a1a1a !important;
+  color: #fff !important;
+}
+
+/* Preserve Bootstrap button colors */
+body.dark-mode .btn-primary,
+body.dark-mode .btn-success,
+body.dark-mode .btn-danger,
+body.dark-mode .btn-warning,
+body.dark-mode .btn-info,
+body.dark-mode .btn-outline-primary,
+body.dark-mode .btn-outline-success,
+body.dark-mode .btn-outline-danger,
+body.dark-mode .btn-outline-warning,
+body.dark-mode .btn-outline-info {
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Don't override original Bootstrap background colors */
+body.dark-mode .btn-primary { background-color: #0d6efd !important; }
+body.dark-mode .btn-success { background-color: #198754 !important; }
+body.dark-mode .btn-danger { background-color: #dc3545 !important; }
+body.dark-mode .btn-warning { background-color: #ffc107 !important; color: #000 !important; }
+body.dark-mode .btn-info { background-color: #0dcaf0 !important; color: #000 !important; }
+
+/* Forms and inputs */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #222 !important;
+  color: #f1f1f1 !important;
+  border-color: #555 !important;
+}
+
+/* Pagination and tables */
+body.dark-mode .page-link {
+  background-color: #222 !important;
+  color: #ccc !important;
+  border-color: #444 !important;
+}
+
+body.dark-mode .table th {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+/* Breadcrumbs and sections */
+body.dark-mode .breadcrumb {
+  background-color: #1b1b1b !important;
+}
+
+/* Fix light text in summaries */
+body.dark-mode .summary,
+body.dark-mode .expenses,
+body.dark-mode .income {
+  color: #fff !important;
+}
+body.dark-mode .table-hover.table-striped {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+}
+body.dark-mode .table-hover.table-striped th {
+  background-color: #2a2a2a !important;
+}

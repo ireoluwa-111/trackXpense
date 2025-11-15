@@ -1,0 +1,51 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="card shadow-sm p-4" style="width: 380px;">
+    <div class="text-center mb-3">
+      <h4 class="fw-bold mb-1">Register for a free account</h4>
+      <p class="text-muted">Track your expenses today and stay in control.</p>
+    </div>
+
+    <form action="{% url 'register' %}" method="post">
+      {% csrf_token %}
+      {% include 'partials/_messages.html' %}
+
+      <div class="mb-3">
+        <input type="text" name="username" placeholder="Username"
+               id="usernameField" value="{{fieldValues.username}}"
+               class="form-control form-control-sm" />
+        <div class="invalid_feedback invalid-feedback" style="display:none"></div>
+        <p class="text-sm text-success usernameSuccessOutput"></p>
+      </div>
+
+      <div class="mb-3">
+        <input type="email" name="email" placeholder="Email"
+               class="form-control form-control-sm" id="emailField"
+               value="{{fieldValues.email}}" />
+        <div class="emailFeedBackArea invalid-feedback" style="display:none"></div>
+      </div>
+
+      <div class="mb-3 position-relative">
+        <input type="password" name="password" placeholder="Password"
+               class="form-control form-control-sm" id="passwordField" />
+      </div>
+
+      <div class="mb-3">
+        <input type="password" name="confirm_password" placeholder="Confirm Password"
+               class="form-control form-control-sm" id="confirmPasswordField" />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 mb-3">Register</button>
+    </form>
+
+    <p class="text-center mb-0">Already have an account?
+      <a href="{% url 'login' %}" class="text-primary">Login</a>
+    </p>
+  </div>
+</div>
+
+<script src="{% static 'js/register.js' %}"></script>
+{% endblock content %}

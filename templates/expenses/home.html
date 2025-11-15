@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">Welcome to TrackXpense </h1>
+    <p class="lead text-muted">
+      Take control of your money — track your expenses and monitor your income effortlessly.
+    </p>
+  </div>
+
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-4">
+      <div class="card shadow-lg border-0 rounded-4 p-4 text-center bg-gradient bg-info text-white">
+        <h3 class="fw-bold mb-3">Total Expenses</h3>
+        <h2 class="display-6">${{ total_expenses }}</h2>
+        <p class="mt-3">Keep an eye on where your money goes</p>
+        <a href="{% url 'expenses' %}" class="btn btn-light btn-lg mt-2">
+           Track Expenses
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg border-0 rounded-4 p-4 text-center bg-gradient bg-success text-white">
+        <h3 class="fw-bold mb-3">Total Income</h3>
+        <h2 class="display-6">${{ total_income }}</h2>
+        <p class="mt-3">Monitor your earnings over time</p>
+        <a href="{% url 'income' %}" class="btn btn-light btn-lg mt-2">
+          View Income Summary
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <h4 class="fw-bold mb-3">Start managing your finances today!</h4>
+    <a href="{% url 'expenses' %}" class="btn btn-primary btn-lg mx-2 shadow">
+      Go to Expenses
+    </a>
+    <a href="{% url 'income' %}" class="btn btn-success btn-lg mx-2 shadow">
+      Go to Income
+    </a>
+  </div>
+</div>
+
+<style>
+  body {
+    background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
+  }
+  .card {
+    transition: all 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+</style>
+{% endblock %}

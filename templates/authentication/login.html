@@ -1,0 +1,40 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="card shadow-sm p-4" style="width: 360px;">
+    <div class="text-center mb-3">
+      <h4 class="fw-bold mb-1">Login to your account</h4>
+      <p class="text-muted">Welcome back! Continue tracking your expenses.</p>
+    </div>
+
+    <form action="{% url 'login' %}" method="post">
+      {% csrf_token %}
+      {% include 'partials/_messages.html' %}
+
+      <div class="mb-3">
+        <input type="text" name="username" placeholder="Username"
+               id="usernameField" value="{{fieldValues.username}}"
+               class="form-control form-control-sm" />
+      </div>
+
+      <div class="mb-3 position-relative">
+        <input type="password" name="password" placeholder="Password"
+               class="form-control form-control-sm" id="passwordField" />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+      <div class="text-center mb-3">
+        <a href="{% url 'reset_password' %}" class="text-decoration-none text-muted">Forgot your password?</a>
+      </div>
+    </form>
+
+    <p class="text-center mb-0">Don’t have an account?
+      <a href="{% url 'register' %}" class="text-primary">Register</a>
+    </p>
+  </div>
+</div>
+
+<script src="{% static 'js/register.js' %}"></script>
+{% endblock content %}

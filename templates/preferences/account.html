@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h4 class="mb-3">Account Settings</h4>
+
+  <form method="post" action="">
+    {% csrf_token %}
+    <div class="form-group mb-3">
+      <label><strong>Username</strong></label>
+      <input type="text" class="form-control" value="{{ request.user.username }}" readonly>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="email"><strong>Email Address</strong></label>
+      <input type="email" class="form-control" name="email" id="email"
+             value="{{ request.user.email }}" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Update Email</button>
+    <a href="#">Reset Password</a>
+  </form>
+</div>
+{% endblock %}
+

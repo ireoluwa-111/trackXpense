@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h4 class="mb-3">General Settings</h4>
+  {% include 'partials/_messages.html' %}
+
+  <form action="{% url 'preferences' %}" method="post">
+    {% csrf_token %}
+
+    <!-- Currency Preference -->
+    <div class="form-group mb-3">
+      <label for="currencySelect"><strong>Preferred Currency</strong></label>
+      <select name="currency" class="form-control" id="currencySelect">
+        {% if user_preferences.currency %}
+        <option selected value="{{user_preferences.currency}}">{{user_preferences.currency}}</option>
+        {% endif %}
+        {% for currency in currencies %}
+        <option value="{{currency.name}} - {{currency.value}}">
+          {{currency.name}} - {{currency.value}}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Monthly Budget -->
+    <div class="form-group mb-3">
+      <label for="monthlyBudget"><strong>Monthly Budget Goal</strong></label>
+      <input type="number" step="0.01" class="form-control" name="monthly_budget" id="monthlyBudget"
+        placeholder="Enter your monthly budget"
+        value="{{ user_preferences.monthly_budget|default_if_none:'' }}">
+    </div>
+
+    <!-- Theme Preference -->
+    <div class="form-group mb-3">
+      <label for="theme"><strong>Theme Preference</strong></label>
+      <select name="theme" id="theme" class="form-control">
+        <option value="light" {% if user_preferences.theme == 'light' %}selected{% endif %}>Light</option>
+        <option value="dark" {% if user_preferences.theme == 'dark' %}selected{% endif %}>Dark</option>
+        <option value="auto" {% if user_preferences.theme == 'auto' %}selected{% endif %}>Auto</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Save Changes</button>
+  </form>
+</div>
+{% endblock %}
